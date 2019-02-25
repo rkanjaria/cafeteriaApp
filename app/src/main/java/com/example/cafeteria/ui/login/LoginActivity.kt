@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer
 import com.example.cafeteria.R
 import com.example.cafeteria.databinding.ActivityLoginBinding
 import com.example.cafeteria.obtainViewModel
-import com.example.cafeteria.setUpToolbar
 import com.example.cafeteria.ui.home.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
