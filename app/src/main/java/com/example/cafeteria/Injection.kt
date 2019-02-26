@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Injection {
 
-    private val BASE_URL = "someAPi.com/"
+    private val BASE_URL = "https://someAPi.com/"
 
     private fun provideRetrofitApi(): RetrofitApi =
         Retrofit.Builder()
