@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ProximaNovaBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/proxima_nova_bold</item>
+    </style>
+
+    <style name="ProximaNovaRegular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="ProximaNovaThin" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/proxima_nova_thin</item>
+    </style>
+
+
 </resources>

@@ -1,63 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".ui.login.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.login.LoginActivity">
 
     <data>
+
         <variable
-                name="viewModel"
-                type="com.example.cafeteria.ui.login.LoginViewModel"/>
+            name="viewModel"
+            type="com.example.cafeteria.ui.login.LoginViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <View
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite">
+
+            <View
+                android:id="@+id/view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@drawable/curve_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:0.7"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-
-        <com.google.android.material.card.MaterialCardView
-                android:id="@+id/login_card"
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                app:cardCornerRadius="6dp"
-                app:cardElevation="6dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintVertical_bias="0.655">
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <!--<androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/email"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
-        />-->
-
-
-        <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_grey_background"
+                android:hint="Email"
+                android:padding="12dp"
+                android:textAppearance="@style/ProximaNovaRegular"
+                app:layout_constraintBottom_toTopOf="@+id/password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Goto Home"
-                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintWidth_percent="0.7" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_grey_background"
+                android:hint="Password"
+                android:padding="12dp"
+                android:textAppearance="@style/ProximaNovaRegular"
+                app:layout_constraintBottom_toTopOf="@id/login_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                app:layout_constraintWidth_percent="0.7" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
                 android:onClick="@{() -> viewModel.navigateToHome()}"
-                android:id="@+id/materialButton"/>
+                android:padding="12dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                app:cornerRadius="24dp"
+                android:textAppearance="@style/ProximaNovaBold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password"
+                app:layout_constraintWidth_percent="0.7" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
